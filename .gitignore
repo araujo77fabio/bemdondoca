@@ -1,0 +1,11 @@
+# Originais e pacotes de fotos (pesados, não usados pelo site)
+assets/images/img/
+*.zip
+
+# Configuração local de ferramentas
+.claude/
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store

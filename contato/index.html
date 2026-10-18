@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato — Bem Dondoca</title>
+  <meta name="description" content="Conte a ocasião. A mensagem abre no WhatsApp. Cíntia Stamato responde em horário comercial.">
+  <link rel="preload" href="/assets/fonts/BodoniModa-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Literata-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css">
+  
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <header class="site-header wrap">
+    <a class="logo" href="/">
+      <img src="/assets/brand/logo-claro.png" alt="Bem Dondoca" width="126" height="72">
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav primary-nav" id="primary-navigation" aria-label="Navegação principal"><a href="/historia/">História</a><a href="/ocasioes/">Ocasiões</a><a href="/galeria/">Galeria</a><a href="/presente/">Presente</a><a href="/espaco/">Espaço</a><a href="/contato/" aria-current="page">Contato</a></nav>
+  </header>
+  <main id="conteudo">
+    <header class="page-head wrap">
+      <p class="kicker">Contato</p>
+      <h1 class="page-title">Conte a ocasião.</h1>
+      <p class="lede">A resposta chega pelo seu nome.</p>
+      <p><a class="text-link" href="/ocasioes/">Ver as ocasiões</a></p>
+    </header>
+    <div class="contact-layout wrap">
+    <aside class="contact-image">
+      <img src="/assets/images/presente-caixa-premium.webp" alt="Caixa de presente sofisticada com doces artesanais" width="1024" height="1536">
+      <p>Conte o momento. Nós cuidamos do gesto.</p>
+    </aside>
+    <form class="form" id="encomenda" data-encomenda action="#encomenda">
+      <div>
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" autocomplete="name" aria-required="true" aria-invalid="false" aria-describedby="erro-nome">
+        <p class="error" id="erro-nome" data-error="nome" role="alert" hidden>Falta o nome. A resposta precisa chegar à pessoa certa. Escreva nome e sobrenome.</p>
+      </div>
+      <div>
+        <label for="ocasiao">Ocasião</label>
+        <input id="ocasiao" name="ocasiao" type="text" autocomplete="off" aria-required="true" aria-invalid="false" aria-describedby="erro-ocasiao">
+        <p class="error" id="erro-ocasiao" data-error="ocasiao" role="alert" hidden>Falta a ocasião. Ela é o assunto da encomenda. Escreva, por exemplo, aniversário ou casamento.</p>
+      </div>
+      <div>
+        <label for="desejo">O que deseja (opcional)</label>
+        <select id="desejo" name="desejo">
+          <option value="">Não informar</option>
+          <option>Bolo</option>
+          <option>Doce</option>
+          <option>Brownie</option>
+          <option>Bem-casado</option>
+          <option>Cupcake</option>
+          <option>Presente</option>
+        </select>
+      </div>
+      <div>
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" aria-required="true" aria-invalid="false" aria-describedby="erro-mensagem"></textarea>
+        <p class="error" id="erro-mensagem" data-error="mensagem" role="alert" hidden>Falta a mensagem. Uma linha já serve.</p>
+      </div>
+      <p class="plain">Sem preço neste site.</p>
+      <p class="note">A mensagem abre no WhatsApp. Cíntia Stamato responde em horário comercial.</p>
+      <p class="note">WhatsApp <a href="https://wa.me/5592984600996" target="_blank" rel="noopener noreferrer">+55 92 98460-0996</a>.</p>
+      <noscript>
+        <p class="note">Sem o recurso do navegador, a mensagem não é montada aqui. O número continua o mesmo: +55 92 98460-0996.</p>
+      </noscript>
+      <button class="button" type="submit">Enviar a ocasião</button>
+      <p class="fallback" data-fallback role="status" hidden>Se o WhatsApp não abriu, a mensagem está neste número: <a href="https://wa.me/5592984600996">+55 92 98460-0996</a>.</p>
+    </form>
+    </div>
+
+    <section class="mapa wrap" aria-labelledby="mapa-titulo">
+      <div class="mapa-info">
+        <p class="kicker">Visite a loja</p>
+        <h2 id="mapa-titulo">Onde estamos.</h2>
+        <address class="mapa-endereco">R. Leonor Teles, 276 A<br>Adrianópolis, Manaus - AM<br>69057-510</address>
+        <p class="mapa-links">
+          <a class="text-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.+Leonor+Teles%2C+276+A+-+Adrian%C3%B3polis%2C+Manaus+-+AM%2C+69057-510" target="_blank" rel="noopener noreferrer">Como chegar</a>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=R.+Leonor+Teles%2C+276+A+-+Adrian%C3%B3polis%2C+Manaus+-+AM%2C+69057-510" target="_blank" rel="noopener noreferrer">Abrir no Google Maps</a>
+        </p>
+      </div>
+      <div class="mapa-frame">
+        <iframe src="https://www.google.com/maps?q=R.+Leonor+Teles%2C+276+A+-+Adrian%C3%B3polis%2C+Manaus+-+AM%2C+69057-510&amp;z=16&amp;output=embed" title="Mapa com a localização da Bem Dondoca na R. Leonor Teles, 276 A, Adrianópolis, Manaus" width="1160" height="480" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="logo footer-logo" href="/">
+          <img src="/assets/brand/logo-escuro.png" alt="Bem Dondoca" width="154" height="88">
+        </a>
+        <p class="footer-meta">R. Leonor Teles, 276 A - Adrianópolis, Manaus - AM, 69057-510</p>
+        <p class="footer-meta"><a href="https://wa.me/5592984600996" target="_blank" rel="noopener noreferrer">WhatsApp +55 92 98460-0996</a></p>
+        <p class="footer-meta"><a href="https://www.instagram.com/bemdondocadoces/" target="_blank" rel="noopener noreferrer">Instagram @bemdondocadoces</a></p>
+        <p class="footer-meta">Cíntia Stamato responde em horário comercial.</p>
+      </div>
+      <div>
+        <nav class="nav" aria-label="Seções no rodapé"><a href="/historia/">História</a><a href="/ocasioes/">Ocasiões</a><a href="/galeria/">Galeria</a><a href="/presente/">Presente</a><a href="/espaco/">Espaço</a><a href="/contato/" aria-current="page">Contato</a></nav>
+        <p class="actions"><a class="button" href="/contato/">Iniciar a encomenda</a></p>
+      </div>
+    </div>
+  </footer>
+  <script src="/assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bem Dondoca — PRD</title>
+<style>
+@font-face {
+  font-family: "Bodoni Moda";
+  src: url("assets/BodoniModa-Variable.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bodoni Moda";
+  src: url("assets/BodoniModa-Italic-Variable.ttf") format("truetype");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+}
+:root {
+  --marfim: #F6F1EA;
+  --verde-profundo: #2C3330;
+  --terracota: #C47B4A;
+  --verde-salvia: #7A9A76;
+  --areia-quente: #C4A882;
+  --serif: "Bodoni Moda", "Palatino Linotype", Palatino, Georgia, serif;
+  --medida: 44rem;
+  --gutter: clamp(1rem, 6vw, 5rem);
+}
+* { box-sizing: border-box; }
+html { background: var(--marfim); }
+body {
+  margin: 0;
+  background: var(--marfim);
+  color: var(--verde-profundo);
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--areia-quente); color: var(--verde-profundo); }
+a { color: inherit; text-decoration-color: var(--terracota); text-underline-offset: .2em; }
+a:focus-visible { outline: 2px solid var(--terracota); outline-offset: 3px; }
+
+/* Capa */
+.capa {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: var(--gutter);
+  border-bottom: 1px solid var(--areia-quente);
+}
+.capa-centro { align-self: center; justify-self: center; text-align: center; }
+.capa img { width: min(26rem, 80vw); height: auto; display: block; margin: 0 auto -1.5rem; }
+.capa h1 {
+  font-weight: 400;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  margin: 0;
+}
+.capa .linha {
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+  margin: 1rem 0 0;
+}
+.capa .fio { width: 4rem; height: 1px; background: var(--terracota); margin: 2rem auto 0; border: 0; }
+.capa-rodape {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem;
+  font-size: .78rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--verde-salvia);
+}
+
+/* Sumário */
+.sumario { max-width: var(--medida); margin: 0 auto; padding: 5rem var(--gutter) 2rem; }
+.sumario p { font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; color: var(--verde-salvia); margin: 0 0 1rem; }
+.sumario ol { list-style: none; margin: 0; padding: 0; columns: 2 14rem; column-gap: 3rem; }
+.sumario li { break-inside: avoid; border-top: 1px solid var(--areia-quente); }
+.sumario a { display: flex; gap: 1rem; padding: .55rem 0; text-decoration: none; }
+.sumario a:hover { color: var(--terracota); }
+
+/* Corpo */
+main { max-width: var(--medida); margin: 0 auto; padding: 0 var(--gutter) 6rem; }
+section { padding-top: 5rem; }
+h2 {
+  font-weight: 500;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  line-height: 1.15;
+  margin: 0 0 1.75rem;
+  padding-bottom: .9rem;
+  border-bottom: 1px solid var(--areia-quente);
+  display: flex; align-items: baseline; gap: 1rem;
+}
+.num {
+  font-size: .8rem; font-weight: 600; letter-spacing: .12em;
+  color: var(--terracota); font-variant-numeric: lining-nums;
+}
+h2 .num { font-size: .95rem; }
+h3 {
+  font-weight: 700;
+  font-size: .82rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--verde-salvia);
+  margin: 2.75rem 0 .75rem;
+}
+p { margin: 0 0 1.1rem; }
+p.nota {
+  font-style: italic; font-size: .95rem;
+  border-left: 2px solid var(--terracota);
+  padding-left: 1.1rem; margin: 3rem 0 0;
+}
+p.rotulo { margin-top: 2rem; }
+strong { font-weight: 700; }
+code {
+  font-family: var(--serif); font-size: .92em; font-style: italic;
+  background: none; padding: 0;
+}
+ul, ol { padding-left: 1.25rem; margin: 0 0 1.4rem; }
+li { margin-bottom: .6rem; }
+li::marker { color: var(--terracota); }
+ul.checklist { list-style: none; padding-left: 0; }
+li.check { display: grid; grid-template-columns: 1.4rem 1fr; gap: .6rem; }
+.box { width: .9rem; height: .9rem; border: 1px solid var(--verde-salvia); margin-top: .45rem; }
+
+.hex { white-space: nowrap; }
+.hex i {
+  display: inline-block; width: .85em; height: .85em; margin-right: .35em;
+  vertical-align: -.05em; border: 1px solid rgba(44, 51, 48, .25); border-radius: 50%;
+}
+
+/* Tabelas */
+.tabela { overflow-x: auto; margin: 1.5rem 0 2rem; }
+table { width: 100%; border-collapse: collapse; font-size: .93rem; line-height: 1.5; }
+th {
+  text-align: left; font-weight: 700;
+  font-size: .72rem; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--verde-salvia);
+  padding: 0 .9rem .7rem 0;
+  border-bottom: 1px solid var(--verde-profundo);
+}
+td { padding: .8rem .9rem .8rem 0; border-bottom: 1px solid var(--areia-quente); vertical-align: top; }
+td:first-child { font-weight: 600; }
+
+.status {
+  margin: 5rem 0 0; padding-top: 1.25rem;
+  border-top: 1px solid var(--terracota);
+  font-size: .8rem; letter-spacing: .14em; text-transform: uppercase;
+}
+
+/* Colofão: logo bege oficial sobre fundo sólido escuro */
+.colofao {
+  background: var(--verde-profundo); color: var(--marfim);
+  padding: 4rem var(--gutter); text-align: center;
+}
+.colofao img { width: min(18rem, 70vw); height: auto; display: block; margin: 0 auto; }
+
+@media (max-width: 40rem) {
+  body { font-size: 1rem; }
+  h2 { flex-direction: column; gap: .25rem; }
+}
+@media print {
+  .capa { min-height: auto; page-break-after: always; }
+  section { page-break-inside: auto; }
+  .sumario { page-break-after: always; }
+}
+</style>
+</head>
+<body>
+<header class="capa">
+  <div class="capa-centro">
+    <img src="assets/logo-fundo-claro.png" alt="Logotipo Bem Dondoca" width="1772" height="945">
+    <h1>Bem Dondoca</h1>
+    <p class="linha">PRD da presença digital</p>
+    <hr class="fio">
+  </div>
+  <div class="capa-rodape">
+    <span>Rascunho · somente requisitos</span>
+    <span>Manaus</span>
+  </div>
+</header>
+
+<nav class="sumario" aria-label="Sumário">
+  <p>Sumário</p>
+  <ol><li><a href="#problem"><span class="num">01</span>Problem</a></li><li><a href="#evidence"><span class="num">02</span>Evidence</a></li><li><a href="#users"><span class="num">03</span>Users</a></li><li><a href="#hypothesis"><span class="num">04</span>Hypothesis</a></li><li><a href="#success-metrics"><span class="num">05</span>Success Metrics</a></li><li><a href="#scope"><span class="num">06</span>Scope</a></li><li><a href="#identidade-de-marca"><span class="num">07</span>Identidade de marca</a></li><li><a href="#delivery-milestones"><span class="num">08</span>Delivery Milestones</a></li><li><a href="#open-questions"><span class="num">09</span>Open Questions</a></li><li><a href="#risks"><span class="num">10</span>Risks</a></li></ol>
+</nav>
+
+<main>
+<p class="nota">Fontes únicas deste documento: <code>docs/fontes/estrategia-extrato.md</code> (citado como <strong>Estratégia p. N</strong>; os trechos da apresentação aparecem como <strong>Apresentação p. N</strong>, conforme registrados nesse extrato) e <code>docs/fontes/marca-extrato.md</code> (citado como <strong>Brandbook p. N</strong>). O que não está nesses extratos não entra aqui como fato.</p>
+</section>
+<section id="problem"><h2><span class="num">01</span>Problem</h2>
+<p>Hoje a Bem Dondoca é vista por "um público reduzido da classe média" como "uma escolha de excelente custo-benefício", embora seus produtos tenham qualidade para o mercado exclusivo de Manaus (Estratégia p. 4). As clientes que a estratégia quer conquistar são mulheres de alta renda que pesquisam a marca antes de encomendar e validam a escolha com amigas (Estratégia p. 15–17). Enquanto a percepção não mudar, a marca continua sendo comprada pelo preço em vez de ser escolhida como "uma grife exclusiva" (Estratégia p. 7), e não alcança o reposicionamento que motivou a nova identidade (Estratégia p. 4).</p>
+</section>
+<section id="evidence"><h2><span class="num">02</span>Evidence</h2>
+<ul><li><strong>Percepção atual:</strong> "Atualmente, a Bem Dondoca é percebida por um público reduzido da classe média como uma das melhores opções no mercado de bolos." e "Esse público enxerga a marca como uma escolha de excelente custo-benefício." (Estratégia p. 4)</li><li><strong>Objetivo declarado:</strong> "o objetivo é reposicionar a Bem Dondoca, elevando sua percepção de valor, já que seus produtos possuem qualidade para atuar em um segmento voltado ao mercado exclusivo." (Estratégia p. 4)</li><li><strong>Consistência em todo contato:</strong> a identidade deve comunicar os valores "de forma consistente em todos os pontos de contato" (Estratégia p. 4), e a experiência de sofisticação deve existir "em todos os seus pontos de contato" (Estratégia p. 6). O documento não lista quais são esses pontos.</li><li><strong>Valor emocional vem também da comunicação:</strong> "Essa conexão emocional não é despertada apenas por nossos produtos ou serviços, mas também por nossas ações, comunicação e qualquer contato que o público tenha com a Bem Dondoca." (Estratégia p. 7)</li><li><strong>Como as personas escolhem:</strong> Helena "pesquisa no Instagram, busca indicações de amigas do mesmo nível social e não se importa com preço, mas sim com qualidade superior e atendimento personalizado" (Estratégia p. 15); Mariana "pesquisa bastante antes de decidir, compara qualidade e apresentação" (Estratégia p. 16); Valéria faz "pesquisa minuciosa no Instagram" com "validação com amigas de seu seleto grupo social" (Estratégia p. 17).</li><li><strong>Ocasiões de compra:</strong> "Casamentos que selam destinos, aniversários que celebram conquistas, marcos profissionais que coroam trajetórias, encontros íntimos entre amigas, declarações de amor" (Estratégia p. 5). A venda é por "encomenda" (Estratégia p. 5).</li><li><strong>Portfólio declarado:</strong> "Bolos, doces, brownies,bem-casados cupcakes." (Estratégia p. 6); "Bolos Personalizados, doces finos, brownies artesanais, presentes diferenciados, bem casados, caixas" (Brandbook p. 4).</li><li><strong>Diferenciais funcionais:</strong> ingredientes de "marcas de qualidade", "Caixas personalizadas e diferenciadas", ambiente "aconchegante e luxuoso" disponível "para locação em pequenos eventos", e atendimento "humanizado [...] escuta e 'olho no olho'" (Estratégia p. 6).</li><li><strong>Presentear como tema:</strong> "presentes exclusivos" (Estratégia p. 9), "experiência em presentear" (Estratégia p. 19), "o melhor presente não é o mais caro, mas sim aquele que toca a alma." (Estratégia p. 10).</li><li><strong>Manifesto:</strong> "Enquanto muitas confeitarias se parecem com mais do mesmo, nós escolhemos caminhar na direção oposta." e "Não somos para todos e fazemos questão disso." (Estratégia p. 10)</li><li><strong>História disponível para contar:</strong> início em janeiro de 2017, produção em casa, primeira loja no bairro Nossa Senhora das Graças, hoje com 60 m², em Manaus (Estratégia p. 3). A estratégia oferece uma versão rotulada "Opção reduzida" (Estratégia p. 3).</li><li><strong>O que a cliente deve sentir (só na apresentação):</strong> "Essa marca é daqui?" e "Não conheço outra marca igual em Manaus" (Apresentação p. 8).</li><li><strong>Comunicação que a marca recusa:</strong> abordagem de promoção com "descontos incríveis [...] Clique aqui e confira!" e tom casual (Estratégia p. 21; Brandbook p. 24).</li><li><strong>Site não é citado:</strong> "o documento não menciona site" e não decide canais digitais (Estratégia, Lacunas). <strong>Assumption — needs validation via pesquisa com clientes em Manaus:</strong> que o site seja um dos pontos de contato que essas clientes consultam ao pesquisar a marca, além do Instagram.</li></ul>
+</section>
+<section id="users"><h2><span class="num">03</span>Users</h2>
+<ul><li><strong>Primary:</strong> mulher de alta renda em Manaus que precisa encomendar bolo, doces ou um presente para uma ocasião marcante (casamento, aniversário, marco profissional, encontro entre amigas, declaração de amor — Estratégia p. 5). O gatilho é a ocasião ou o presente. Antes de decidir, ela pesquisa a marca, compara qualidade e apresentação e busca validação de amigas (Estratégia p. 15–17). Referências nominais: Helena Augusto, 40 anos, empresária, classe A, que recebe amigas e colegas para eventos exclusivos (Estratégia p. 15); Valéria Albuquerque, 53 anos, anfitriã de eventos de alto padrão, classe A+ (Estratégia p. 17).</li><li><strong>Secondary:</strong> Mariana Sampaio, 33 anos, classe B+, que usa a marca em eventos corporativos e networking e busca "custo-benefício que justifique o investimento" (Estratégia p. 16).</li><li><strong>Not for:</strong> a estratégia afirma "Não somos para todos e fazemos questão disso." (Estratégia p. 10). A marca não quer parecer uma confeitaria "mais do mesmo" (Estratégia p. 10), nem uma loja de liquidação ou de desconto (Estratégia p. 21; Brandbook p. 24). Um segmento de público explicitamente excluído além disso: TBD.</li></ul>
+</section>
+<section id="hypothesis"><h2><span class="num">04</span>Hypothesis</h2>
+<p>We believe <strong>uma presença digital que apresente a Bem Dondoca como confeitaria sofisticada de Manaus — com história, portfólio organizado por ocasião, diferenciais de ingredientes, embalagem e atendimento, e um caminho claro para iniciar uma encomenda personalizada, tudo na identidade verbal e visual da marca</strong> will <strong>elevar a percepção de valor da marca, de "excelente custo-benefício" para escolha do mercado exclusivo</strong> for <strong>mulheres de alta renda em Manaus que pesquisam a marca antes de encomendar para uma ocasião ou presente</strong>. We'll know we're right when <strong>TBD — needs validation via pesquisa com clientes em Manaus</strong>.</p>
+</section>
+<section id="success-metrics"><h2><span class="num">05</span>Success Metrics</h2>
+<div class="tabela"><table><thead><tr><th>Metric</th><th>Target</th><th>How measured</th></tr></thead><tbody><tr><td>Percepção da marca: custo-benefício × sofisticação/exclusividade</td><td>TBD — needs validation via pesquisa com clientes em Manaus</td><td>Pesquisa com clientes em Manaus, antes e depois do lançamento</td></tr><tr><td>Clientes que dizem algo equivalente a "Não conheço outra marca igual em Manaus" (Apresentação p. 8)</td><td>TBD</td><td>Pesquisa ou entrevistas com clientes</td></tr><tr><td>Contatos de encomenda iniciados a partir do site</td><td>TBD</td><td>TBD — depende do canal de contato, ainda não decidido</td></tr><tr><td>Consultas sobre locação do espaço para pequenos eventos</td><td>TBD</td><td>TBD — depende do canal de contato</td></tr><tr><td>Contatos respondidos pela marca</td><td>TBD</td><td>TBD — a marca rejeita "Falta de retorno aos clientes" (Brandbook p. 27), mas não define prazo</td></tr><tr><td>Textos do site com gírias, tratamentos íntimos, tom promocional ou erro de português</td><td>Nenhum (regra da Estratégia p. 21 e do Brandbook p. 23–24)</td><td>Revisão de todo texto publicado contra a lista de palavras a evitar</td></tr><tr><td>Aplicações do logo fora das cores e versões oficiais</td><td>Nenhuma (regras do Brandbook p. 33, 36, 39)</td><td>Revisão visual de cada página</td></tr></tbody></table></div>
+</section>
+<section id="scope"><h2><span class="num">06</span>Scope</h2>
+<p class="rotulo"><strong>MVP — o que a cliente precisa perceber e conseguir fazer:</strong></p>
+<ol><li><strong>Reconhecer de imediato uma marca sofisticada de Manaus.</strong> Ao chegar, a cliente lê o posicionamento ("Na Bem Dondoca, tudo é pensado para despertar sensações únicas e fazer você se sentir especial." — Estratégia p. 9; Brandbook p. 10) e a assinatura "Experimente a sensação de ser Bem Dondoca." (Brandbook p. 12).</li><li><strong>Conhecer a história da marca</strong> pela versão curta: início em 2017, produção em casa, crescimento por indicação, loja em Nossa Senhora das Graças, Manaus (Estratégia p. 3).</li><li><strong>Ver o que a marca faz,</strong> por categoria (bolos, doces, brownies, bem-casados, cupcakes — Estratégia p. 6) e por ocasião (Estratégia p. 5), sem preço (ver Out of scope).</li><li><strong>Entender por que vale mais:</strong> ingredientes de marcas de qualidade, caixas personalizadas e atendimento personalizado e humanizado (Estratégia p. 6).</li><li><strong>Encontrar a Bem Dondoca como opção de presente,</strong> com a linguagem de "experiência em presentear" (Estratégia p. 19) e "presentes exclusivos" (Estratégia p. 9).</li><li><strong>Saber que existe um espaço físico</strong> para vendas e disponível para locação em pequenos eventos (Estratégia p. 6), sem detalhes operacionais que a estratégia não decide.</li><li><strong>Iniciar um contato de encomenda ou de dúvida</strong> e ser atendida pelo nome, no modo de diálogo da marca ("Olá. Helena Augusto, É um prazer receber seu contato…" — Brandbook p. 24; Estratégia p. 21). O canal é pergunta aberta.</li><li><strong>Reconhecer a mesma marca que viu no Instagram:</strong> mesma voz, logo e assinatura, porque as personas descobrem a marca lá (Estratégia p. 15–17) e a identidade precisa ser consistente em todos os pontos de contato (Estratégia p. 4).</li></ol>
+<p class="rotulo"><strong>Out of scope:</strong></p>
+<div class="tabela"><table><thead><tr><th>Item</th><th>Motivo</th></tr></thead><tbody><tr><td>Checkout, carrinho ou e-commerce</td><td>A estratégia não decide canais digitais nem menciona venda online (Estratégia, Lacunas). A venda descrita é por encomenda com atendimento personalizado (Estratégia p. 5–6).</td></tr><tr><td>Aplicativo</td><td>Não há decisão sobre aplicativo (Estratégia, Lacunas).</td></tr><tr><td>Cardápio ou catálogo com preço</td><td>Não há tabela, faixa nem política de preços (Estratégia, Lacunas).</td></tr><tr><td>Catálogo detalhado (sabores, tamanhos, itens)</td><td>O documento só define categorias (Estratégia p. 6, Lacunas).</td></tr><tr><td>Área logada, cadastro ou conta de cliente</td><td>Não aparece em nenhuma fonte.</td></tr><tr><td>Reserva online do espaço para eventos</td><td>Capacidade, preço e forma de reserva não estão definidos (Estratégia, Lacunas).</td></tr><tr><td>Promoções, cupons, contagem regressiva ou "não perca"</td><td>A abordagem promocional é contraexemplo explícito (Estratégia p. 21; Brandbook p. 24).</td></tr><tr><td>Prazos, entrega, retirada, área atendida, horários e pagamento</td><td>A operação não está definida (Estratégia, Lacunas).</td></tr><tr><td>Endereço completo, telefone e perfil de Instagram</td><td>Não constam nos extratos; só o bairro Nossa Senhora das Graças (Estratégia p. 3). Entram quando forem fornecidos.</td></tr><tr><td>Brisé</td><td>A relação com a Bem Dondoca não é explicada (Estratégia p. 3).</td></tr><tr><td>Espaço Stamato e "novo espaço"</td><td>Não se sabe o que são, onde ficam nem quando abrem (Estratégia p. 21, 23–25).</td></tr><tr><td>Caixa da Noiva e Sweet Box como produtos</td><td>Aparecem só na apresentação e em aplicações do brandbook, sem definição (Estratégia, Contradições; Brandbook p. 52).</td></tr></tbody></table></div>
+</section>
+<section id="identidade-de-marca"><h2><span class="num">07</span>Identidade de marca</h2>
+<h3>Paleta</h3>
+<p>Há duas paletas nas fontes, e elas divergem. Este PRD registra as duas e não escolhe entre elas.</p>
+<p class="rotulo"><strong>Paleta pedida (fixada pelo usuário, conferida no extrato de marca, seção 1.1):</strong></p>
+<div class="tabela"><table><thead><tr><th>Nome</th><th>Hex</th><th>Papel</th></tr></thead><tbody><tr><td>Marfim</td><td><span class="hex"><i style="background:#F6F1EA"></i><code>#F6F1EA</code></span></td><td>Fundo principal claro</td></tr><tr><td>Verde Profundo</td><td><span class="hex"><i style="background:#2C3330"></i><code>#2C3330</code></span></td><td>Texto principal e fundo escuro</td></tr><tr><td>Verde Sálvia</td><td><span class="hex"><i style="background:#7A9A76"></i><code>#7A9A76</code></span></td><td>Acento primário</td></tr><tr><td>Terracota</td><td><span class="hex"><i style="background:#C47B4A"></i><code>#C47B4A</code></span></td><td>Acento secundário e destaques</td></tr><tr><td>Areia Quente</td><td><span class="hex"><i style="background:#C4A882"></i><code>#C4A882</code></span></td><td>Apoio: divisores e superfícies secundárias</td></tr></tbody></table></div>
+<p class="rotulo"><strong>Paleta impressa no brandbook (Brandbook p. 43, "Código de cores"):</strong></p>
+<div class="tabela"><table><thead><tr><th>Nome (não oficial)</th><th>Hex</th><th>Atributos impressos</th><th>Papel observado</th></tr></thead><tbody><tr><td>Marrom</td><td><span class="hex"><i style="background:#371F16"></i><code>#371F16</code></span></td><td>"Elegância, Sutileza, Força"</td><td>Logo, texto e fundo escuro</td></tr><tr><td>Bege</td><td><span class="hex"><i style="background:#E7D4BE"></i><code>#E7D4BE</code></span></td><td>"Pureza, Leveza, Aconchego"</td><td>Fundo claro e logo sobre fundo escuro</td></tr></tbody></table></div>
+<ul><li>Os papéis da paleta pedida são uma proposta do extrato de marca, inferida por valor e contraste; o brandbook não os define (Brandbook, seção 1.1).</li><li><strong>Nenhuma das cinco cores pedidas consta no brandbook nem na prancha da padronagem</strong> (Brandbook, seção 0). A estratégia também define marrom e creme como paleta principal (Estratégia p. 27). Se as cinco cores substituem ou convivem com marrom e bege é pergunta aberta.</li><li>O logo nunca usa a paleta pedida: só marrom <span class="hex"><i style="background:#371F16"></i><code>#371F16</code></span>, bege <span class="hex"><i style="background:#E7D4BE"></i><code>#E7D4BE</code></span>, preto ou branco. Logo em verde é uso incorreto (Brandbook p. 33, 36, 39).</li></ul>
+<h3>Logotipo</h3>
+<ul><li><strong>Fundo claro:</strong> <code>Arquivo logo Bem Dondoca_Prancheta 1.png</code>, versão vertical em marrom oficial (Brandbook, seção 2.9).</li><li><strong>Fundo escuro:</strong> <code>Arquivo logo Bem Dondoca-05.png</code>, versão vertical em bege oficial; sobre Verde Profundo também vale <code>-13</code> (branco, negativa) (Brandbook, seção 2.9).</li><li><strong>Espaços pequenos</strong> (ícone do site, avatar): monograma "BD" (Brandbook p. 33).</li><li><strong>Permitido:</strong> versões vertical, horizontal, nominal e monograma (Brandbook p. 32–33); fundo sólido e plano com contraste alto (Brandbook p. 40); respiro mínimo de 1 X ao redor, sendo X o arco do símbolo (Brandbook p. 37).</li><li><strong>Proibido:</strong> distorcer, rotacionar, recolorir, contornar, desalinhar ou mudar a proporção entre símbolo e wordmark (Brandbook p. 36); aplicar sobre gradiente, fotografia movimentada ou fundo de baixo contraste (Brandbook p. 41); usar abaixo do tamanho mínimo (Brandbook p. 35); colocar a padronagem gráfica atrás do logo (Brandbook p. 41).</li></ul>
+<h3>Tipografia</h3>
+<ul><li><strong>Bodoni Moda</strong> é a tipografia oficial (Brandbook p. 49).</li><li><strong>Títulos:</strong> Bodoni Moda em corte leve de alto contraste e em corte Black/ExtraBold (Brandbook p. 49).</li><li><strong>Texto de apoio:</strong> Bodoni Moda Regular e Itálico, com exemplo de texto corrido no próprio brandbook (Brandbook p. 50). Por isso o texto corrido também segue a Bodoni Moda.</li><li>O brandbook não define tamanhos, entrelinha, legenda nem fonte de fallback para web (Brandbook, Lacunas).</li></ul>
+<h3>Voz</h3>
+<ul><li><strong>Slogan:</strong> "Experimente a sensação de ser Bem Dondoca." citado literalmente (Brandbook p. 12). A estratégia trazia quatro opções sem escolha (Estratégia p. 22); o brandbook fixa esta.</li><li><strong>Arquétipo:</strong> Governante como principal ("Formal, confiável, imponente") e Criador como secundário ("intensivo, estético, provocador") (Brandbook p. 18; Estratégia p. 12–13).</li><li><strong>Vocabulário:</strong> "feito para você", "único como você", "experiência em presentear", "pensado para você", "detalhes especiais", "feito à mão com carinho", "cuidado nos detalhes", "novidades exclusivas", "surpreenda-se" (Estratégia p. 19; Brandbook p. 21). Palavras principais incluem sofisticado, elegante, personalizado, exclusivo, requinte, inesquecível, momentos (Estratégia p. 20; Brandbook p. 22). As palavras criativas (chocolatudo, recheadíssimo, brigadeirudo, cremosíssimo) também fazem parte da nuvem (Estratégia p. 20).</li><li><strong>Modo de diálogo:</strong> tratar pelo nome; linguagem refinada sem ser rebuscada; confiança e competência; cordialidade; "elegância na simplicidade"; personalizar cada comunicação (Estratégia p. 21; Brandbook p. 23).</li><li><strong>Palavras a evitar:</strong> "gata", "top", "babadeiros", "arrasar", "mana", "maninha", "amor", "querida" (Brandbook p. 23–24). Também ficam de fora linguagem imperativa agressiva, tom de promoção ou desconto, "não perca / clique aqui" e erros de português (Estratégia p. 21; Brandbook p. 23–24).</li></ul>
+<h3>Experiência</h3>
+<ul><li><strong>Premium sem ser esnobe:</strong> a apresentação pede "Mostrar que é premium sem ser esnobe" e "Visual bonito e sofisticado, mas não sério demais" (Apresentação p. 5), e lembra que "confeitaria é alegria, doce é alegria" (Apresentação p. 9). O brandbook reforça "Comunicação refinada sem jamais ser arrogante" (Brandbook p. 26) e proíbe "Perder a humanização por excesso de formalidade" (Brandbook p. 23). Isso convive com "Não somos para todos" (Estratégia p. 10): exclusividade sem arrogância.</li><li><strong>Cíntia como referência:</strong> a apresentação diz "CÍNTIA COMO REFERÊNCIA — Ela como rosto da marca" (Apresentação p. 5). A estratégia não nomeia a fundadora (Estratégia p. 3). O papel dela no site é pergunta aberta.</li><li><strong>Embalagem:</strong> "Caixas personalizadas e diferenciadas, pensadas para proporcionar uma experiência única na entrega" (Estratégia p. 6); a entrega e o unboxing devem gerar um "fator wow" (Brandbook p. 20).</li><li><strong>Memória afetiva:</strong> "Criamos memórias afetivas e transmitimos segurança" (Estratégia p. 7); propósito "Criar memórias afetivas através do sabor" (Brandbook p. 27).</li><li><strong>Padronagem gráfica:</strong> a pincelada pintada à mão pode aparecer em postagens e outros materiais, com coerência de contexto (Brandbook p. 44–45), nunca atrás do logo (Brandbook p. 41).</li></ul>
+</section>
+<section id="delivery-milestones"><h2><span class="num">08</span>Delivery Milestones</h2>
+<div class="tabela"><table><thead><tr><th>#</th><th>Milestone</th><th>Resultado visível para a cliente</th><th>Status</th><th>Plan</th></tr></thead><tbody><tr><td>1</td><td>Primeira impressão</td><td>A cliente reconhece uma confeitaria sofisticada de Manaus, lê o posicionamento e a assinatura e conhece a história curta da marca</td><td>pending</td><td>—</td></tr><tr><td>2</td><td>Portfólio e diferenciais</td><td>A cliente vê as categorias e as ocasiões, entende ingredientes, embalagem e atendimento e encontra a marca como opção de presente</td><td>pending</td><td>—</td></tr><tr><td>3</td><td>Contato de encomenda</td><td>A cliente inicia um contato de encomenda ou dúvida e é atendida pelo nome, no tom da marca</td><td>pending</td><td>—</td></tr><tr><td>4</td><td>Espaço físico</td><td>A cliente sabe que o espaço existe para vendas e para locação em pequenos eventos, e como perguntar sobre ele</td><td>pending</td><td>—</td></tr></tbody></table></div>
+</section>
+<section id="open-questions"><h2><span class="num">09</span>Open Questions</h2>
+<ul class="checklist"><li class="check"><span class="box" aria-hidden="true"></span>A paleta Marfim, Verde Profundo, Verde Sálvia, Terracota e Areia Quente substitui ou convive com o marrom <span class="hex"><i style="background:#371F16"></i><code>#371F16</code></span> e o bege <span class="hex"><i style="background:#E7D4BE"></i><code>#E7D4BE</code></span> do brandbook e com a paleta marrom e creme da estratégia (Estratégia p. 27; Brandbook p. 43)?</li><li class="check"><span class="box" aria-hidden="true"></span>Qual canal recebe o contato de encomenda (por exemplo, WhatsApp, formulário ou Instagram)? A estratégia não decide canais (Estratégia, Lacunas).</li><li class="check"><span class="box" aria-hidden="true"></span>Quem responde os contatos e em quanto tempo? A marca rejeita "Falta de retorno aos clientes" (Brandbook p. 27).</li><li class="check"><span class="box" aria-hidden="true"></span>Endereço, telefone, horários e perfil de Instagram oficiais podem ser publicados? Quais são?</li><li class="check"><span class="box" aria-hidden="true"></span>A fundadora (Cíntia, segundo a Apresentação p. 5) aparece no site como rosto da marca? Com nome?</li><li class="check"><span class="box" aria-hidden="true"></span>O público prioritário é só classe A (Apresentação p. 3) ou inclui B+ como a persona Mariana (Estratégia p. 16)?</li><li class="check"><span class="box" aria-hidden="true"></span>O site mostra alguma referência a preço ou faixa de investimento, ou nenhuma?</li><li class="check"><span class="box" aria-hidden="true"></span>Quais itens, sabores e tamanhos entram no portfólio publicado?</li><li class="check"><span class="box" aria-hidden="true"></span>Como funciona a locação do espaço para pequenos eventos (capacidade, condições, forma de consulta)?</li><li class="check"><span class="box" aria-hidden="true"></span>O que são o Espaço Stamato e o "novo espaço" (Estratégia p. 21, 23–25), e eles entram no site?</li><li class="check"><span class="box" aria-hidden="true"></span>Qual é a relação entre a Brisé e a Bem Dondoca (Estratégia p. 3), e ela aparece no site?</li><li class="check"><span class="box" aria-hidden="true"></span>Caixa da Noiva e Sweet Box são produtos a publicar?</li><li class="check"><span class="box" aria-hidden="true"></span>O site deve comunicar novidades e lançamentos constantes (Estratégia p. 19)? Quem mantém esse conteúdo?</li><li class="check"><span class="box" aria-hidden="true"></span>Haverá entrega, retirada ou ambos, e em qual área?</li><li class="check"><span class="box" aria-hidden="true"></span>Qual é o tamanho mínimo do logo em tela, e existem arquivos vetoriais do logo (Brandbook p. 30, Lacunas)?</li><li class="check"><span class="box" aria-hidden="true"></span>Quem fornece as fotografias? O brandbook não tem diretriz fotográfica (Brandbook, Lacunas).</li><li class="check"><span class="box" aria-hidden="true"></span>Qual é a linha de base de percepção antes do lançamento, para medir a hipótese?</li></ul>
+</section>
+<section id="risks"><h2><span class="num">10</span>Risks</h2>
+<div class="tabela"><table><thead><tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Mitigation</th></tr></thead><tbody><tr><td>A paleta pedida diverge da paleta principal da estratégia e do brandbook (marrom e creme); usar as duas sem decisão quebra a consistência entre pontos de contato exigida na Estratégia p. 4</td><td>Alta</td><td>Alto</td><td>Levar a pergunta da paleta ao usuário antes da direção visual; manter o logo sempre nas cores oficiais (Brandbook p. 33, 36, 39)</td></tr><tr><td>A exclusividade vira esnobismo e afasta clientes</td><td>Média</td><td>Alto</td><td>Aplicar "premium sem ser esnobe" (Apresentação p. 5) e a proibição de arrogância e de excesso de formalidade (Brandbook p. 23, 26) em todo texto</td></tr><tr><td>O site parece "mais do mesmo" ou loja de promoção</td><td>Média</td><td>Alto</td><td>Banir linguagem promocional e de urgência (Estratégia p. 21; Brandbook p. 24); revisar todo texto contra a lista de palavras a evitar</td></tr><tr><td>O site promete prazo, entrega, preço ou reserva que a operação não definiu</td><td>Média</td><td>Alto</td><td>Não publicar informação operacional até as perguntas abertas serem respondidas</td></tr><tr><td>Contatos iniciados pelo site ficam sem resposta</td><td>Média</td><td>Alto</td><td>Definir canal e responsável antes do lançamento do milestone 3</td></tr><tr><td>Não há linha de base nem meta, então a hipótese não pode ser confirmada</td><td>Alta</td><td>Médio</td><td>Fazer pesquisa com clientes em Manaus antes do lançamento</td></tr><tr><td>O site não é um ponto de contato que as personas consultam, já que a descoberta descrita é pelo Instagram (Estratégia p. 15–17)</td><td>Média</td><td>Alto</td><td>Validar na pesquisa com clientes; manter o site coerente com o Instagram</td></tr><tr><td>Logo aplicado sobre foto, gradiente ou em cor não oficial</td><td>Média</td><td>Médio</td><td>Seguir as regras do Brandbook p. 36–41 em cada página</td></tr></tbody></table></div>
+</section>
+<p class="status">Status: DRAFT — requirements only. Implementation planning pending via /plan.</p>
+</main>
+
+<footer class="colofao">
+  <img src="assets/logo-fundo-escuro.png" alt="Logotipo Bem Dondoca" width="1772" height="945">
+</footer>
+</body>
+</html>
