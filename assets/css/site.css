@@ -617,3 +617,14 @@ img.marca-dagua {
 @media (prefers-reduced-motion: reduce) {
   .hero-arco-frame img, .motion .hero-arco-title .line { animation: none; }
 }
+
+/* Pincelada da identidade como marca-d'água atrás do texto do hero */
+.hero-arco-copy { position: relative; isolation: isolate; }
+.hero-arco-marca { position: absolute; top: 44%; left: -12%; z-index: -1; width: min(118%, 760px); max-width: none; height: auto; opacity: .16; mix-blend-mode: multiply; transform: rotate(-5deg); transform-origin: left center; pointer-events: none; user-select: none; }
+@media (max-width: 900px) {
+  .hero-arco-marca { top: 40%; left: -24px; width: min(112%, 620px); opacity: .15; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-arco-marca { animation: marca-in 1200ms var(--ease) 200ms both; }
+}
+@keyframes marca-in { from { opacity: 0; clip-path: inset(0 100% 0 0); } to { opacity: .16; clip-path: inset(0 0 0 0); } }
